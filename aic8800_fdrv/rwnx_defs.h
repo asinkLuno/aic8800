@@ -13,7 +13,16 @@
 #ifndef _RWNX_DEFS_H_
 #define _RWNX_DEFS_H_
 
+#include <linux/version.h>
 #include <linux/interrupt.h>
+#include <linux/timer.h>
+
+/* Kernel 6.18+ timer API compatibility */
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 18, 0)
+#define del_timer(timer) timer_delete(timer)
+#define del_timer_sync(timer) timer_delete_sync(timer)
+#define from_timer(var, ptr, member) container_of(ptr, typeof(*var), member)
+#endif
 #include <linux/device.h>
 #include <linux/dmapool.h>
 #include <linux/skbuff.h>
