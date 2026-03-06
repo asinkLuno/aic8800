@@ -1,0 +1,31 @@
+# Build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+*.order
+*.symvers
+*.cmd
+
+# Module build directories
+aic8800_fdrv/*.o
+aic8800_fdrv/*.ko
+aic8800_fdrv/*.mod
+aic8800_fdrv/*.mod.c
+aic8800_fdrv/*.order
+aic8800_fdrv/*.symvers
+aic8800_fdrv/.module*
+aic8800_fdrv/.*.cmd
+
+aic_load_fw/*.o
+aic_load_fw/*.ko
+aic_load_fw/*.mod
+aic_load_fw/*.mod.c
+aic_load_fw/*.order
+aic_load_fw/*.symvers
+aic_load_fw/.module*
+aic_load_fw/.*.cmd
+
+.module*
+.modules.order
+Module.symvers
